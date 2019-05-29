@@ -1,0 +1,10 @@
+/.travis.yml
+/.github/
+/node_modules/*
+/.nyc_output/*
+/coverage/*
+/docs/*
+.yo-rc.json
+jsdoc.json
+/test/*
+/.test_output/*

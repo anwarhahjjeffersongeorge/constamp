@@ -1,0 +1,22 @@
+{
+  "markdown": {
+    "hardwrap": true
+  },
+  "plugins": ["plugins/markdown"],
+  "sourceType": "module",
+  "templates": {
+    "copyright": "ⓤ Uncopyright 2019 by Anwar Hahj Jefferson-George",
+    "includeDate": true,
+    "navType": "inline",
+    "theme": "slate",
+    "linenums": true,
+    "collapseSymbols": false,
+    "inverseNav": true,
+    "outputSourceFiles": true,
+    "outputSourcePath": true,
+    "dateFormat":" YYYY MMDD HHmmZZ",
+    "syntaxTheme": "dark",
+    "sort": true,
+    "search": true
+  }
+}

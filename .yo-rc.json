@@ -1,0 +1,14 @@
+{
+  "generator-esmse": {
+    "promptValues": {
+      "authorName": "Anwar Hahj Jefferson-George",
+      "authorEmail": "anwarhahjjeffersongeorge@gmail.com",
+      "authorUsername": "anwarhahjjeffersongeorge",
+      "lintTool": "standard",
+      "testingTool": "ava",
+      "documentationTool": "jsdoc",
+      "addManual": false,
+      "addCli": true
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "author": "Anwar Hahj Jefferson-George <anwarhahjjeffersongeorge@gmail.com>",
+  "dependencies": {
+    "dayjs": "^1.8.14",
+    "esm": "^3.2.25",
+    "sade": "^1.4.2"
+  },
+  "description": "Context stamping.",
+  "devDependencies": {
+    "ava": "^1.4.1",
+    "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
+    "jsdoc": "^3.6.2",
+    "nyc": "^14.1.1",
+    "snazzy": "^8.0.0",
+    "standard": "^12.0.1"
+  },
+  "keywords": [
+    "constamp"
+  ],
+  "license": "Unlicense",
+  "main": "./src/index.js",
+  "module": "./src/main.js",
+  "name": "constamp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anwarhahjjeffersongeorge/constamp.git"
+  },
+  "scripts": {
+    "clean": "rm -rf .nyc_output coverage docs",
+    "coverage": "codecov",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=html ava",
+    "wtest": "ava --watch",
+    "preversion": "npm test && npm run doc",
+    "postversion": "git push",
+    "predoc": "rm -rf docs",
+    "doc": "jsdoc src/main.js -d ./docs/ -c ./jsdoc.json -r ./README.md --verbose -t ./node_modules/ink-docstrap/template",
+    "pretest": "clear && standard --fix \"index.js\" \"main.js\" | snazzy"
+  },
+  "version": "0.0.0",
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ],
+    "sources": [
+      "./src/**/*.js"
+    ],
+    "color": true,
+    "cache": true,
+    "concurrency": 5,
+    "failFast": true,
+    "failWithoutAssertions": true,
+    "tap": true,
+    "verbose": true,
+    "compileEnhancements": true,
+    "require": [
+      "esm"
+    ]
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "bin": {
+    "constamp": "./src/cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/anwarhahjjeffersongeorge/constamp/issues"
+  },
+  "homepage": "https://github.com/anwarhahjjeffersongeorge/constamp#readme",
+  "directories": {
+    "test": "test"
+  }
+}
