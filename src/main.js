@@ -55,7 +55,11 @@ class Constamp {
   #hashes = {}
 
   /**
-   * constructor - Create a stamp relating to various data, including the UTC epoch time, process hrtime, node executable path, current working directory, user, architecture, hostname, etc.
+   * constructor - Create an immutable stamp relating to various data, including the
+   *
+   * - **D**: execPath, cwd and pwd,
+   * - **T**: time and hrtime, and
+   * - **W**:  type, user info, arch, hostname, totalmem and platform.
    *
    * @param  {object} o = { format: null } parameters
    * @param  {?string} o.format a dayjs-recognizeable template string
@@ -233,7 +237,11 @@ class Constamp {
     }
   }
   /**
-   * toJson - serialize as a JSON string
+   * toJson - serialize as a JSON string containg the fields:
+   *
+   * - **d**: hash,
+   * - **t**: utc, and
+   * - **w**: hash.
    *
    * @return {string} JSON
    */

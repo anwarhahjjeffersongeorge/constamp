@@ -8,6 +8,7 @@ const sade = require('sade')
 const { log, error } = console
 const { writeFile, readFile, open } = require('fs')
 const defaults = {
+  encoding: 'utf8',
   hexfileext: 'constamp',
   get hexfilename () {
     return format({
@@ -89,6 +90,7 @@ prog
   .command('save [file]')
   .option('-f, --force', 'Overwrite file.')
   .describe('Save the local context stamp (hash) to a file.')
+  .example('save myNewConstamp.txt')
   .action((file = defaults.hexfilename, { f }) => {
     log(`Saving to file ${file}`)
     open(file, 'wx', (err, fd) => {
@@ -100,7 +102,7 @@ prog
         throw err
       }
       writeFile(fd, c.toJson(), {
-        encoding: 'utf8'
+        encoding: defaults.encoding
       }, (errr) => {
         if (errr) {
           throw errr
@@ -114,6 +116,7 @@ prog
 prog
   .command('load <file>')
   .describe('Load a saved context stamp file for comparison')
+  .example('load myOldConstamp.txt')
   .action((file) => {
     let cc
     log(`Loading ${file}`)
@@ -126,7 +129,7 @@ prog
         throw err
       }
       readFile(fd, {
-        encoding: 'utf8'
+        encoding: defaults.encoding
       }, (errr, data) => {
         if (errr) {
           throw errr
