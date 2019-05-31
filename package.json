@@ -38,7 +38,7 @@
     "doc": "jsdoc src/main.js -d ./docs/ -c ./jsdoc.json -r ./README.md --verbose -t ./node_modules/ink-docstrap/template",
     "pretest": "clear && standard --fix \"index.js\" \"main.js\" | snazzy"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "ava": {
     "files": [
       "test/**/*.test.js"
