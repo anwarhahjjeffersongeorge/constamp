@@ -6,7 +6,7 @@ import { chdir } from 'process'
 import { resolve } from 'path'
 // import dayjs from 'dayjs'
 //
-const testOutDir = '.test_output'
+const testOutDir = 'test/.test_output'
 const f = new Constamp()
 
 test('comparators', t => {

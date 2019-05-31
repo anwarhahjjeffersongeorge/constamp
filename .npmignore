@@ -7,4 +7,3 @@
 .yo-rc.json
 jsdoc.json
 /test/*
-/.test_output/*
